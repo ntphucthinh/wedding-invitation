@@ -1,14 +1,17 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
-// const wishes = [
-//   { name: 'Minh Anh', message: 'Chúc hai bạn luôn hạnh phúc, yêu thương nhau mỗi ngày và giữ mãi những khoảnh khắc đẹp này.' },
-//   { name: 'Khánh Linh', message: 'Một ngày cưới đầy ấm áp và những ký ức đẹp mãi mãi trong lòng mỗi người.' },
-//   { name: 'Đức', message: 'May mắn và bình an luôn đồng hành cùng hai bạn trong hành trình mới.' },
-// ];
+type WishEntry = {
+  name: string;
+  message?: string;
+};
 
-function Wishes({ refreshSignal }) {
-  const [submissions, setSubmissions] = useState([]);
+type WishesProps = {
+  refreshSignal: number;
+};
+
+function Wishes({ refreshSignal }: WishesProps) {
+  const [submissions, setSubmissions] = useState<WishEntry[]>([]);
 
   useEffect(() => {
     const fetchSubmissions = async () => {

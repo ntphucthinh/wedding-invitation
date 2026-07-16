@@ -1,6 +1,11 @@
 import { useEffect, useState } from 'react';
 
-function Popup() {
+type PopupProps = {
+  name: string;
+  onClose: () => void;
+};
+
+function Popup({ name, onClose }: PopupProps) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -16,7 +21,14 @@ function Popup() {
         <p className="text-sm uppercase tracking-[0.4em] text-[#9e8130]">Lời chào</p>
         <h3 className="mt-3 font-wedding text-3xl text-[#8b0000]">Cảm ơn bạn đã đến đây</h3>
         <p className="mt-4 text-gray-600">Chúng tôi rất vui khi được chia sẻ khoảnh khắc này cùng bạn.</p>
-        <button onClick={() => setOpen(false)} className="mt-6 rounded-full bg-[#9e8130] px-5 py-3 text-white">
+        {name ? <p className="mt-2 text-sm text-gray-500">Bạn đã xác nhận: {name}</p> : null}
+        <button
+          onClick={() => {
+            setOpen(false);
+            onClose();
+          }}
+          className="mt-6 rounded-full bg-[#9e8130] px-5 py-3 text-white"
+        >
           Xem Thêm
         </button>
       </div>

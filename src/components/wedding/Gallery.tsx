@@ -10,7 +10,12 @@ import galleryTwo from '@/assets/images/betterimage_1754671511212-20250809012834
 import galleryThree from '@/assets/images/snapedit_1754670036384-20250809012838-xbxki.jpeg';
 import galleryFour from '@/assets/images/z6888117023198_c24fe7d0cb4f28c899222a499b237729-20250809012834-9fkoy.jpg';
 
-const images = [
+type GalleryImage = {
+  src: string;
+  alt: string;
+};
+
+const images: GalleryImage[] = [
   { src: galleryOne, alt: 'Ảnh cưới 1' },
   { src: galleryTwo, alt: 'Ảnh cưới 2' },
   { src: galleryThree, alt: 'Ảnh cưới 3' },
@@ -18,7 +23,7 @@ const images = [
 ];
 
 function Gallery() {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
 
   return (
     <section className="bg-[#fcfaf2] px-6 py-20 sm:px-8 lg:px-12">

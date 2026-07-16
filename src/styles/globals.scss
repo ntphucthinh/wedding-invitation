@@ -1,5 +1,5 @@
-@import 'variables';
-@import 'animation';
+@use 'variables' as *;
+@use 'animation';
 
 // Font Faces
 @font-face {

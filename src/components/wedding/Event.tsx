@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaCalendarAlt, FaGlassCheers, FaRing, FaGift, FaCameraRetro, FaMusic, FaMapMarkerAlt, FaClock, FaDirections } from 'react-icons/fa';
+import { FaCalendarAlt, FaGlassCheers, FaRing, FaGift, FaCameraRetro, FaMusic, FaMapMarkerAlt, FaDirections } from 'react-icons/fa';
 
 const mapsUrl = 'https://maps.app.goo.gl/CvdkUeAhLYnDYzVB9';
 const mapEmbedUrl = 'https://maps.google.com/maps?q=10.9428461,106.8735294&z=17&output=embed';

@@ -1,15 +1,24 @@
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, type FieldErrors } from 'react-hook-form';
 import { motion } from 'framer-motion';
 import { FaPaperPlane } from 'react-icons/fa';
 
-function RSVP({ onSubmitted }) {
+type RSVPFormValues = {
+  name: string;
+  message: string;
+};
+
+type RSVPProps = {
+  onSubmitted?: (name: string) => void;
+};
+
+function RSVP({ onSubmitted }: RSVPProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
   const [showToast, setShowToast] = useState(false);
-  const { register, handleSubmit, formState: { errors }, reset } = useForm();
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<RSVPFormValues>();
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (data: RSVPFormValues) => {
     setIsSubmitting(true);
 
     try {
@@ -24,7 +33,8 @@ function RSVP({ onSubmitted }) {
       setShowToast(true);
       onSubmitted?.(data.name);
     } catch (error) {
-      setToastMessage(error.message);
+      const message = error instanceof Error ? error.message : 'Có lỗi xảy ra, vui lòng thử lại.';
+      setToastMessage(message);
       setShowToast(true);
     } finally {
       setIsSubmitting(false);
@@ -70,7 +80,7 @@ function RSVP({ onSubmitted }) {
                 required: 'Vui lòng nhập lời chúc',
                 maxLength: { value: 200, message: 'Tối đa 200 ký tự' },
               })}
-              rows="5"
+              rows={5}
               className="w-full rounded-[1.25rem] border border-[#e3d3a7] px-4 py-3 outline-none ring-0"
               placeholder="Chúc hai bạn trăm năm hạnh phúc..."
             />

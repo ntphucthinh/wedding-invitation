@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Countdown from 'react-countdown';
+import Countdown, { type CountdownRenderProps } from 'react-countdown';
 import { motion } from 'framer-motion';
 
 const targetDate = new Date('2026-09-14T00:00:00').getTime();
@@ -11,7 +11,7 @@ function WeddingCountdown() {
     setMounted(true);
   }, []);
 
-  const renderer = ({ days, hours, minutes, seconds }) => (
+  const renderer = ({ days, hours, minutes, seconds }: CountdownRenderProps) => (
     <div className="grid grid-cols-4 gap-3 justify-items-center">
       {[
         { label: 'Ngày', value: days },

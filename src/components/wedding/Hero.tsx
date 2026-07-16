@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
-import { FaHeart, FaChevronDown } from "react-icons/fa";
 import heroBackground from "@/assets/images/tai-xuong-20250809012834-nl0rs.jpg";
-import logo from "@/assets/images/wedding-heart-logo.png";
 
 
 function Hero() {

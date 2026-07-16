@@ -14,7 +14,7 @@ const Footer = lazy(() => import('@/components/wedding/Footer'));
 function App() {
   const [confirmationName, setConfirmationName] = useState('');
   const [refreshWishesSignal, setRefreshWishesSignal] = useState(0);
-  const handleRsvpSubmitted = useCallback((name) => {
+  const handleRsvpSubmitted = useCallback((name: string) => {
     setConfirmationName(name);
     setRefreshWishesSignal((value) => value + 1);
   }, []);
