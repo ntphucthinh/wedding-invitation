@@ -1,0 +1,292 @@
+[
+  {
+    "url": "https://w.ladicdn.com/689218c23c46d40012eac1e2/allura-regular-20250808042631-lxhc7.ttf",
+    "localPath": "src/assets/fonts/allura-regular.ttf",
+    "importName": "allura_regular"
+  },
+  {
+    "url": "https://w.ladicdn.com/689218c23c46d40012eac1e2/utm-wedding-kt-20250808042631-8pvtu.ttf",
+    "localPath": "src/assets/fonts/utm-wedding-kt.ttf",
+    "importName": "utm_wedding_kt"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/beckneee-dev/mp3-hosting/Lana%20Del%20Rey%20-%20Young%20And%20Beautiful.mp3",
+    "localPath": "src/assets/audio/music.mp3",
+    "importName": "music"
+  },
+  {
+    "url": "https://w.ladicdn.com/ladiui/icons/social/tiktok-icon.svg",
+    "localPath": "src/assets/icons/tiktok.svg",
+    "importName": "tiktok"
+  },
+  {
+    "url": "https://w.ladicdn.com/ladiui/icons/social/facebook.svg",
+    "localPath": "src/assets/icons/facebook.svg",
+    "importName": "facebook"
+  },
+  {
+    "url": "https://w.ladicdn.com/ladiui/icons/social/zalo.svg",
+    "localPath": "src/assets/icons/zalo.svg",
+    "importName": "zalo"
+  },
+  {
+    "url": "https://static.ladipage.net/689218c23c46d40012eac1e2/snapedit_1754669975683-20250809035547-0jooj.jpeg",
+    "localPath": "src/assets/images/snapedit_1754669975683-20250809035547-0jooj.jpeg",
+    "importName": "snapedit_1754669975683_20250809035547_0jooj"
+  },
+  {
+    "url": "https://static.ladipage.net/689218c23c46d40012eac1e2/beige-and-brown-elegant-initials-wedding-logo-1-20251009123923-9zixk.png",
+    "localPath": "src/assets/images/wedding-logo.png",
+    "importName": "wedding_logo"
+  },
+  {
+    "url": "https://w.ladicdn.com/source/ladipage-play.svg",
+    "localPath": "src/assets/icons/ladipage-play.svg",
+    "importName": "ladipage_play"
+  },
+  {
+    "url": "https://w.ladicdn.com/ladiui/icons/ldicon-discount-coupon.svg",
+    "localPath": "src/assets/icons/ldicon-discount-coupon.svg",
+    "importName": "ldicon_discount_coupon"
+  },
+  {
+    "url": "https://w.ladicdn.com/ladiui/icons/new-ldicon-arrow-left.svg",
+    "localPath": "src/assets/icons/new-ldicon-arrow-left.svg",
+    "importName": "new_ldicon_arrow_left"
+  },
+  {
+    "url": "https://w.ladicdn.com/s750x950/689218c23c46d40012eac1e2/tai-xuong-20250809012834-nl0rs.jpg",
+    "localPath": "src/assets/images/tai-xuong-20250809012834-nl0rs.jpg",
+    "importName": "tai_xuong_20250809012834_nl0rs"
+  },
+  {
+    "url": "https://w.ladicdn.com/s768x969/689218c23c46d40012eac1e2/tai-xuong-3-20250809013906-e7pns.jpg",
+    "localPath": "src/assets/images/tai-xuong-3-20250809013906-e7pns.jpg",
+    "importName": "tai_xuong_3_20250809013906_e7pns"
+  },
+  {
+    "url": "https://w.ladicdn.com/s650x800/689218c23c46d40012eac1e2/betterimage_1754671511212-20250809012834-ygz08.jpeg",
+    "localPath": "src/assets/images/betterimage_1754671511212-20250809012834-ygz08.jpeg",
+    "importName": "betterimage_1754671511212_20250809012834_ygz08"
+  },
+  {
+    "url": "https://w.ladicdn.com/s600x700/689218c23c46d40012eac1e2/z6888086411462_e6d2e5a13ee8213498d76f9c59acac10-20250809012835-jo_ki.jpg",
+    "localPath": "src/assets/images/z6888086411462_e6d2e5a13ee8213498d76f9c59acac10-20250809012835-jo_ki.jpg",
+    "importName": "z6888086411462_e6d2e5a13ee8213498d76f9c59acac10_20250809012835_jo_ki"
+  },
+  {
+    "url": "https://w.ladicdn.com/s750x900/689218c23c46d40012eac1e2/z6888117023198_c24fe7d0cb4f28c899222a499b237729-20250809012834-9fkoy.jpg",
+    "localPath": "src/assets/images/z6888117023198_c24fe7d0cb4f28c899222a499b237729-20250809012834-9fkoy.jpg",
+    "importName": "z6888117023198_c24fe7d0cb4f28c899222a499b237729_20250809012834_9fkoy"
+  },
+  {
+    "url": "https://w.ladicdn.com/s750x900/689218c23c46d40012eac1e2/khung-1-20260627103609-ljqxv.png",
+    "localPath": "src/assets/images/khung-background.png",
+    "importName": "khung_background"
+  },
+  {
+    "url": "https://w.ladicdn.com/s450x450/689218c23c46d40012eac1e2/logo-1-20260627103708-dbcrb.png",
+    "localPath": "src/assets/images/wedding-heart-logo.png",
+    "importName": "wedding_heart_logo"
+  },
+  {
+    "url": "https://w.ladicdn.com/s750x950/689218c23c46d40012eac1e2/tai-xuong-2-20250809012834-fpjgn.jpg",
+    "localPath": "src/assets/images/tai-xuong-2-20250809012834-fpjgn.jpg",
+    "importName": "tai_xuong_2_20250809012834_fpjgn"
+  },
+  {
+    "url": "https://w.ladicdn.com/s750x950/689218c23c46d40012eac1e2/snapedit_1754670036384-20250809012838-xbxki.jpeg",
+    "localPath": "src/assets/images/snapedit_1754670036384-20250809012838-xbxki.jpeg",
+    "importName": "snapedit_1754670036384_20250809012838_xbxki"
+  },
+  {
+    "url": "https://w.ladicdn.com/s450x500/689218c23c46d40012eac1e2/snapedit_1754669957636-20250809012839-8oehf.jpeg",
+    "localPath": "src/assets/images/snapedit_1754669957636-20250809012839-8oehf.jpeg",
+    "importName": "snapedit_1754669957636_20250809012839_8oehf"
+  },
+  {
+    "url": "https://w.ladicdn.com/s450x500/689218c23c46d40012eac1e2/z6888086411462_e6d2e5a13ee8213498d76f9c59acac10-20250809012835-jo_ki.jpg",
+    "localPath": "src/assets/images/z6888086411462_e6d2e5a13ee8213498d76f9c59acac10-20250809012835-jo_ki.jpg",
+    "importName": "z6888086411462_e6d2e5a13ee8213498d76f9c59acac10_20250809012835_jo_ki"
+  },
+  {
+    "url": "https://w.ladicdn.com/s500x600/689218c23c46d40012eac1e2/z6888086390173_724fd2f9e818a30255fd5376535e6323-20250809012835-wcp3l.jpg",
+    "localPath": "src/assets/images/z6888086390173_724fd2f9e818a30255fd5376535e6323-20250809012835-wcp3l.jpg",
+    "importName": "z6888086390173_724fd2f9e818a30255fd5376535e6323_20250809012835_wcp3l"
+  },
+  {
+    "url": "https://w.ladicdn.com/s700x1000/689218c23c46d40012eac1e2/z6888117023198_c24fe7d0cb4f28c899222a499b237729-20250809012834-9fkoy.jpg",
+    "localPath": "src/assets/images/z6888117023198_c24fe7d0cb4f28c899222a499b237729-20250809012834-9fkoy.jpg",
+    "importName": "z6888117023198_c24fe7d0cb4f28c899222a499b237729_20250809012834_9fkoy"
+  },
+  {
+    "url": "https://w.ladicdn.com/s450x450/689218c23c46d40012eac1e2/z6888117023198_c24fe7d0cb4f28c899222a499b237729-20250809012834-9fkoy.jpg",
+    "localPath": "src/assets/images/z6888117023198_c24fe7d0cb4f28c899222a499b237729-20250809012834-9fkoy.jpg",
+    "importName": "z6888117023198_c24fe7d0cb4f28c899222a499b237729_20250809012834_9fkoy"
+  },
+  {
+    "url": "https://w.ladicdn.com/s700x1000/689218c23c46d40012eac1e2/tai-xuong-2-20250809012834-fpjgn.jpg",
+    "localPath": "src/assets/images/tai-xuong-2-20250809012834-fpjgn.jpg",
+    "importName": "tai_xuong_2_20250809012834_fpjgn"
+  },
+  {
+    "url": "https://w.ladicdn.com/s450x450/689218c23c46d40012eac1e2/tai-xuong-2-20250809012834-fpjgn.jpg",
+    "localPath": "src/assets/images/tai-xuong-2-20250809012834-fpjgn.jpg",
+    "importName": "tai_xuong_2_20250809012834_fpjgn"
+  },
+  {
+    "url": "https://w.ladicdn.com/s700x1000/689218c23c46d40012eac1e2/tai-xuong-20250809012834-nl0rs.jpg",
+    "localPath": "src/assets/images/tai-xuong-20250809012834-nl0rs.jpg",
+    "importName": "tai_xuong_20250809012834_nl0rs"
+  },
+  {
+    "url": "https://w.ladicdn.com/s450x450/689218c23c46d40012eac1e2/tai-xuong-20250809012834-nl0rs.jpg",
+    "localPath": "src/assets/images/tai-xuong-20250809012834-nl0rs.jpg",
+    "importName": "tai_xuong_20250809012834_nl0rs"
+  },
+  {
+    "url": "https://w.ladicdn.com/s700x1000/689218c23c46d40012eac1e2/tai-xuong-1-20250809012834-bywlo.jpg",
+    "localPath": "src/assets/images/tai-xuong-1-20250809012834-bywlo.jpg",
+    "importName": "tai_xuong_1_20250809012834_bywlo"
+  },
+  {
+    "url": "https://w.ladicdn.com/s450x450/689218c23c46d40012eac1e2/tai-xuong-1-20250809012834-bywlo.jpg",
+    "localPath": "src/assets/images/tai-xuong-1-20250809012834-bywlo.jpg",
+    "importName": "tai_xuong_1_20250809012834_bywlo"
+  },
+  {
+    "url": "https://w.ladicdn.com/s700x1000/689218c23c46d40012eac1e2/snapedit_1754669975683-20250809012839-rumax.jpeg",
+    "localPath": "src/assets/images/snapedit_1754669975683-20250809012839-rumax.jpeg",
+    "importName": "snapedit_1754669975683_20250809012839_rumax"
+  },
+  {
+    "url": "https://w.ladicdn.com/s450x450/689218c23c46d40012eac1e2/snapedit_1754669975683-20250809012839-rumax.jpeg",
+    "localPath": "src/assets/images/snapedit_1754669975683-20250809012839-rumax.jpeg",
+    "importName": "snapedit_1754669975683_20250809012839_rumax"
+  },
+  {
+    "url": "https://w.ladicdn.com/s700x1000/689218c23c46d40012eac1e2/z6888086390173_724fd2f9e818a30255fd5376535e6323-20250809012835-wcp3l.jpg",
+    "localPath": "src/assets/images/z6888086390173_724fd2f9e818a30255fd5376535e6323-20250809012835-wcp3l.jpg",
+    "importName": "z6888086390173_724fd2f9e818a30255fd5376535e6323_20250809012835_wcp3l"
+  },
+  {
+    "url": "https://w.ladicdn.com/s450x450/689218c23c46d40012eac1e2/z6888086390173_724fd2f9e818a30255fd5376535e6323-20250809012835-wcp3l.jpg",
+    "localPath": "src/assets/images/z6888086390173_724fd2f9e818a30255fd5376535e6323-20250809012835-wcp3l.jpg",
+    "importName": "z6888086390173_724fd2f9e818a30255fd5376535e6323_20250809012835_wcp3l"
+  },
+  {
+    "url": "https://w.ladicdn.com/s700x1000/689218c23c46d40012eac1e2/z6888086411462_e6d2e5a13ee8213498d76f9c59acac10-20250809012835-jo_ki.jpg",
+    "localPath": "src/assets/images/z6888086411462_e6d2e5a13ee8213498d76f9c59acac10-20250809012835-jo_ki.jpg",
+    "importName": "z6888086411462_e6d2e5a13ee8213498d76f9c59acac10_20250809012835_jo_ki"
+  },
+  {
+    "url": "https://w.ladicdn.com/s450x450/689218c23c46d40012eac1e2/z6888086411462_e6d2e5a13ee8213498d76f9c59acac10-20250809012835-jo_ki.jpg",
+    "localPath": "src/assets/images/z6888086411462_e6d2e5a13ee8213498d76f9c59acac10-20250809012835-jo_ki.jpg",
+    "importName": "z6888086411462_e6d2e5a13ee8213498d76f9c59acac10_20250809012835_jo_ki"
+  },
+  {
+    "url": "https://w.ladicdn.com/s700x1000/689218c23c46d40012eac1e2/z6888086411495_2cdf05ca7fc44fab7677126b5bf0e43e-20250809012835-g3u2m.jpg",
+    "localPath": "src/assets/images/z6888086411495_2cdf05ca7fc44fab7677126b5bf0e43e-20250809012835-g3u2m.jpg",
+    "importName": "z6888086411495_2cdf05ca7fc44fab7677126b5bf0e43e_20250809012835_g3u2m"
+  },
+  {
+    "url": "https://w.ladicdn.com/s450x450/689218c23c46d40012eac1e2/z6888086411495_2cdf05ca7fc44fab7677126b5bf0e43e-20250809012835-g3u2m.jpg",
+    "localPath": "src/assets/images/z6888086411495_2cdf05ca7fc44fab7677126b5bf0e43e-20250809012835-g3u2m.jpg",
+    "importName": "z6888086411495_2cdf05ca7fc44fab7677126b5bf0e43e_20250809012835_g3u2m"
+  },
+  {
+    "url": "https://w.ladicdn.com/s700x1000/689218c23c46d40012eac1e2/z6888086390153_6ad418f0bd3ef4e64e5141b55a7f606c-20250809012838-3nxjw.jpg",
+    "localPath": "src/assets/images/z6888086390153_6ad418f0bd3ef4e64e5141b55a7f606c-20250809012838-3nxjw.jpg",
+    "importName": "z6888086390153_6ad418f0bd3ef4e64e5141b55a7f606c_20250809012838_3nxjw"
+  },
+  {
+    "url": "https://w.ladicdn.com/s450x450/689218c23c46d40012eac1e2/z6888086390153_6ad418f0bd3ef4e64e5141b55a7f606c-20250809012838-3nxjw.jpg",
+    "localPath": "src/assets/images/z6888086390153_6ad418f0bd3ef4e64e5141b55a7f606c-20250809012838-3nxjw.jpg",
+    "importName": "z6888086390153_6ad418f0bd3ef4e64e5141b55a7f606c_20250809012838_3nxjw"
+  },
+  {
+    "url": "https://w.ladicdn.com/s700x1000/689218c23c46d40012eac1e2/snapedit_1754670036384-20250809012838-xbxki.jpeg",
+    "localPath": "src/assets/images/snapedit_1754670036384-20250809012838-xbxki.jpeg",
+    "importName": "snapedit_1754670036384_20250809012838_xbxki"
+  },
+  {
+    "url": "https://w.ladicdn.com/s450x450/689218c23c46d40012eac1e2/snapedit_1754670036384-20250809012838-xbxki.jpeg",
+    "localPath": "src/assets/images/snapedit_1754670036384-20250809012838-xbxki.jpeg",
+    "importName": "snapedit_1754670036384_20250809012838_xbxki"
+  },
+  {
+    "url": "https://w.ladicdn.com/s700x1000/689218c23c46d40012eac1e2/betterimage_1754671494992-20250809012834-m-edg.jpeg",
+    "localPath": "src/assets/images/betterimage_1754671494992-20250809012834-m-edg.jpeg",
+    "importName": "betterimage_1754671494992_20250809012834_m_edg"
+  },
+  {
+    "url": "https://w.ladicdn.com/s450x450/689218c23c46d40012eac1e2/betterimage_1754671494992-20250809012834-m-edg.jpeg",
+    "localPath": "src/assets/images/betterimage_1754671494992-20250809012834-m-edg.jpeg",
+    "importName": "betterimage_1754671494992_20250809012834_m_edg"
+  },
+  {
+    "url": "https://w.ladicdn.com/s700x1000/689218c23c46d40012eac1e2/betterimage_1754671511212-20250809012834-ygz08.jpeg",
+    "localPath": "src/assets/images/betterimage_1754671511212-20250809012834-ygz08.jpeg",
+    "importName": "betterimage_1754671511212_20250809012834_ygz08"
+  },
+  {
+    "url": "https://w.ladicdn.com/s450x450/689218c23c46d40012eac1e2/betterimage_1754671511212-20250809012834-ygz08.jpeg",
+    "localPath": "src/assets/images/betterimage_1754671511212-20250809012834-ygz08.jpeg",
+    "importName": "betterimage_1754671511212_20250809012834_ygz08"
+  },
+  {
+    "url": "https://w.ladicdn.com/s700x1000/689218c23c46d40012eac1e2/z6888117029043_537cea14c5d7211be8130d3285da74cd-20250809012834-pe7nn.jpg",
+    "localPath": "src/assets/images/z6888117029043_537cea14c5d7211be8130d3285da74cd-20250809012834-pe7nn.jpg",
+    "importName": "z6888117029043_537cea14c5d7211be8130d3285da74cd_20250809012834_pe7nn"
+  },
+  {
+    "url": "https://w.ladicdn.com/s450x450/689218c23c46d40012eac1e2/z6888117029043_537cea14c5d7211be8130d3285da74cd-20250809012834-pe7nn.jpg",
+    "localPath": "src/assets/images/z6888117029043_537cea14c5d7211be8130d3285da74cd-20250809012834-pe7nn.jpg",
+    "importName": "z6888117029043_537cea14c5d7211be8130d3285da74cd_20250809012834_pe7nn"
+  },
+  {
+    "url": "https://w.ladicdn.com/s700x1000/689218c23c46d40012eac1e2/snapedit_1754669957636-20250809012839-8oehf.jpeg",
+    "localPath": "src/assets/images/snapedit_1754669957636-20250809012839-8oehf.jpeg",
+    "importName": "snapedit_1754669957636_20250809012839_8oehf"
+  },
+  {
+    "url": "https://w.ladicdn.com/s450x450/689218c23c46d40012eac1e2/snapedit_1754669957636-20250809012839-8oehf.jpeg",
+    "localPath": "src/assets/images/snapedit_1754669957636-20250809012839-8oehf.jpeg",
+    "importName": "snapedit_1754669957636_20250809012839_8oehf"
+  },
+  {
+    "url": "https://w.ladicdn.com/s750x900/689218c23c46d40012eac1e2/z6888086390153_6ad418f0bd3ef4e64e5141b55a7f606c-20250809012838-3nxjw.jpg",
+    "localPath": "src/assets/images/z6888086390153_6ad418f0bd3ef4e64e5141b55a7f606c-20250809012838-3nxjw.jpg",
+    "importName": "z6888086390153_6ad418f0bd3ef4e64e5141b55a7f606c_20250809012838_3nxjw"
+  },
+  {
+    "url": "https://w.ladicdn.com/s750x950/689218c23c46d40012eac1e2/z6888117029043_537cea14c5d7211be8130d3285da74cd-20250809012834-pe7nn.jpg",
+    "localPath": "src/assets/images/z6888117029043_537cea14c5d7211be8130d3285da74cd-20250809012834-pe7nn.jpg",
+    "importName": "z6888117029043_537cea14c5d7211be8130d3285da74cd_20250809012834_pe7nn"
+  },
+  {
+    "url": "https://w.ladicdn.com/689218c23c46d40012eac1e2/snapedit_1754669957636-20250809012839-8oehf.jpeg",
+    "localPath": "src/assets/images/snapedit_1754669957636-20250809012839-8oehf.jpeg",
+    "importName": "snapedit_1754669957636_20250809012839_8oehf"
+  },
+  {
+    "url": "https://w.ladicdn.com/689218c23c46d40012eac1e2/z6888086411462_e6d2e5a13ee8213498d76f9c59acac10-20250809012835-jo_ki.jpg",
+    "localPath": "src/assets/images/z6888086411462_e6d2e5a13ee8213498d76f9c59acac10-20250809012835-jo_ki.jpg",
+    "importName": "z6888086411462_e6d2e5a13ee8213498d76f9c59acac10_20250809012835_jo_ki"
+  },
+  {
+    "url": "https://w.ladicdn.com/689218c23c46d40012eac1e2/z6888086390173_724fd2f9e818a30255fd5376535e6323-20250809012835-wcp3l.jpg",
+    "localPath": "src/assets/images/z6888086390173_724fd2f9e818a30255fd5376535e6323-20250809012835-wcp3l.jpg",
+    "importName": "z6888086390173_724fd2f9e818a30255fd5376535e6323_20250809012835_wcp3l"
+  },
+  {
+    "url": "https://w.ladicdn.com/689218c23c46d40012eac1e2/betterimage_1754671511212-20250809012834-ygz08.jpeg",
+    "localPath": "src/assets/images/betterimage_1754671511212-20250809012834-ygz08.jpeg",
+    "importName": "betterimage_1754671511212_20250809012834_ygz08"
+  },
+  {
+    "url": "https://w.ladicdn.com/689218c23c46d40012eac1e2/tai-xuong-1-20250809012834-bywlo.jpg",
+    "localPath": "src/assets/images/tai-xuong-1-20250809012834-bywlo.jpg",
+    "importName": "tai_xuong_1_20250809012834_bywlo"
+  }
+]

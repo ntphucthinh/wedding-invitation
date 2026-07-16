@@ -1,0 +1,29 @@
+{
+  "name": "wedding-golden",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.13",
+    "framer-motion": "^11.15.0",
+    "react": "^19.0.0",
+    "react-countdown": "^2.3.6",
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.54.2",
+    "react-icons": "^5.4.0",
+    "swiper": "^11.1.15"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "sass": "^1.83.0",
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.0.5"
+  }
+}

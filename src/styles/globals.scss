@@ -1,0 +1,96 @@
+@import 'variables';
+@import 'animation';
+
+// Font Faces
+@font-face {
+  font-family: 'Allura';
+  src: url('../assets/fonts/allura-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'UTM Wedding';
+  src: url('../assets/fonts/utm-wedding-kt.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Global Reset & Base Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: $color-cream;
+  color: $color-text-dark;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Allura', cursive;
+  font-weight: normal;
+  color: $color-gold;
+}
+
+.font-allura,
+.font-wedding {
+  font-family: 'Allura', cursive;
+}
+
+.font-utm-wedding {
+  font-family: 'UTM Wedding', serif;
+}
+
+// Utilities
+.text-gold {
+  color: $color-gold;
+}
+
+.bg-gold {
+  background-color: $color-gold;
+}
+
+.text-cream {
+  color: $color-cream;
+}
+
+.bg-cream {
+  background-color: $color-cream;
+}
+
+.text-burgundy {
+  color: $color-burgundy;
+}
+
+.bg-burgundy {
+  background-color: $color-burgundy;
+}
+
+// Layout helpers
+.container-custom {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .container-custom {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
