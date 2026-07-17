@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { useForm, type FieldErrors } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { motion } from 'framer-motion';
 import { FaPaperPlane } from 'react-icons/fa';
+import { createRSVP } from '@/services/rsvp.service';
 
 type RSVPFormValues = {
   name: string;
@@ -16,24 +17,33 @@ function RSVP({ onSubmitted }: RSVPProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
   const [showToast, setShowToast] = useState(false);
-  const { register, handleSubmit, formState: { errors }, reset } = useForm<RSVPFormValues>();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<RSVPFormValues>();
 
   const onSubmit = async (data: RSVPFormValues) => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/rsvp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: data.name, message: data.message }),
+      await createRSVP({
+        name: data.name,
+        message: data.message,
       });
-      if (!response.ok) throw new Error('Không thể gửi lời chúc, bạn vui lòng thử lại.');
+
       reset();
       setToastMessage(`Cảm ơn ${data.name}! Lời chúc của bạn đã được gửi.`);
       setShowToast(true);
       onSubmitted?.(data.name);
     } catch (error) {
-      const message = error instanceof Error ? error.message : 'Có lỗi xảy ra, vui lòng thử lại.';
+      const message =
+        error instanceof Error
+          ? error.message
+          : 'Có lỗi xảy ra, vui lòng thử lại.';
+
       setToastMessage(message);
       setShowToast(true);
     } finally {
@@ -43,8 +53,12 @@ function RSVP({ onSubmitted }: RSVPProps) {
 
   const handleToastClose = () => {
     setShowToast(false);
+
     const wishesSection = document.getElementById('wishes');
-    wishesSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    wishesSection?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
   };
 
   return (
