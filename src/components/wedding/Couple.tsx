@@ -2,7 +2,13 @@ import { motion } from "framer-motion";
 import brideImage from "@/assets/images/snapedit_1754669957636-20250809012839-8oehf.jpeg";
 import groomImage from "@/assets/images/z6888086390153_6ad418f0bd3ef4e64e5141b55a7f606c-20250809012838-3nxjw.jpg";
 
-function Couple() {
+type CoupleProps = {
+  guestName?: string;
+};
+
+function Couple({
+  guestName = 'Quý khách',
+}: CoupleProps) {
   return (
     <section
       id="couple"
@@ -25,7 +31,7 @@ function Couple() {
             Trân trọng kính mời
           </p>
 
-          <p className="mt-2 text-xl italic text-[#8b0000]">Quý khách</p>
+          <p className="mt-2 text-xl italic text-[#8b0000]">{guestName}</p>
 
           <h2 className="mt-3 font-wedding text-4xl text-[#8b0000] sm:text-5xl">
             Đến dự buổi lễ cưới của

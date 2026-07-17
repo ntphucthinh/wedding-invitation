@@ -1,7 +1,11 @@
 import { lazy, Suspense, useCallback, useState } from 'react';
+import { useParams } from 'react-router-dom';
+
 import Hero from '@/components/wedding/Hero';
 import Couple from '@/components/wedding/Couple';
 import Popup from '@/components/wedding/Popup';
+
+import { useGuest } from '@/hooks/useGuest';
 
 const Story = lazy(() => import('@/components/wedding/Story'));
 const Gallery = lazy(() => import('@/components/wedding/Gallery'));
@@ -12,19 +16,24 @@ const Wishes = lazy(() => import('@/components/wedding/Wishes'));
 const Footer = lazy(() => import('@/components/wedding/Footer'));
 
 function App() {
+  const { uuid } = useParams<{ uuid: string }>();
+  const { guest } = useGuest(uuid);
+
   const [confirmationName, setConfirmationName] = useState('');
   const [refreshWishesSignal, setRefreshWishesSignal] = useState(0);
+
   const handleRsvpSubmitted = useCallback((name: string) => {
     setConfirmationName(name);
     setRefreshWishesSignal((value) => value + 1);
   }, []);
+
   const closeConfirmation = useCallback(() => setConfirmationName(''), []);
 
   return (
     <div className="min-h-screen bg-wedding-cream text-gray-800">
       <Popup name={confirmationName} onClose={closeConfirmation} />
       <Hero />
-      <Couple />
+      <Couple guestName={guest?.name} />
       <Suspense fallback={<div className="h-24 bg-wedding-cream" aria-hidden="true" />}>
         <Story />
         <Gallery />
