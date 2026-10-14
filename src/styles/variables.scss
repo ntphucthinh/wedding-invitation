@@ -1,22 +1,28 @@
-// Wedding Theme Colors
-$color-gold: #9E8130;
-$color-gold-light: #C5A059;
-$color-gold-dark: #7A6225;
+// Elegant Luxury + Romantic Floral Theme Palette
+$color-ivory: #FAF7F0;
+$color-warm-white: #FFFDF9;
+$color-champagne: #C6A66B;
+$color-soft-gold: #DFCEAA;
+$color-deep-brown: #59463D;
+$color-body-text: #75665D;
+$color-sage: #A7AA93;
+$color-subtle-border: #E8DED0;
 
-$color-cream: #FCFAF2;
+// Legacy and helper aliases
+$color-gold: #C6A66B;
+$color-gold-light: #DFCEAA;
+$color-gold-dark: #A38448;
+$color-cream: #FAF7F0;
 $color-cream-light: #FFFDF9;
-
 $color-burgundy: #8B0000;
-$color-burgundy-light: #A52A2A;
-
-$color-text-dark: #2D241E;
-$color-text-light: #5D544E;
-
+$color-text-dark: #59463D;
+$color-text-light: #75665D;
 $color-white: #FFFFFF;
 $color-black: #000000;
 
 // Spacing & Radius
-$radius-sm: 4px;
-$radius-md: 8px;
-$radius-lg: 16px;
+$radius-sm: 6px;
+$radius-md: 12px;
+$radius-lg: 20px;
+$radius-xl: 32px;
 $radius-full: 9999px;

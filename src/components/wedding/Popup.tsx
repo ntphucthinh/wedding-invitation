@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { DividerFlourish, FloralCorner } from './Ornaments';
 
 type PopupProps = {
   name: string;
@@ -9,30 +11,68 @@ function Popup({ name, onClose }: PopupProps) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setOpen(true), 800);
+    const timer = setTimeout(() => setOpen(true), 1000);
     return () => clearTimeout(timer);
   }, []);
 
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4">
-      <div className="w-full max-w-md rounded-[2rem] bg-white p-8 text-center shadow-2xl">
-        <p className="text-sm uppercase tracking-[0.4em] text-[#9e8130]">Lời chào</p>
-        <h3 className="mt-3 font-wedding text-3xl text-[#8b0000]">Cảm ơn bạn đã đến đây</h3>
-        <p className="mt-4 text-gray-600">Chúng tôi rất vui khi được chia sẻ khoảnh khắc này cùng bạn.</p>
-        {name ? <p className="mt-2 text-sm text-gray-500">Bạn đã xác nhận: {name}</p> : null}
-        <button
-          onClick={() => {
-            setOpen(false);
-            onClose();
-          }}
-          className="mt-6 rounded-full bg-[#9e8130] px-5 py-3 text-white"
+    <AnimatePresence>
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9, y: 15 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.9 }}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
+          className="relative w-full max-w-md rounded-[2.5rem] border-2 border-[#DFCEAA] bg-[#FFFDF9] p-8 text-center shadow-2xl"
         >
-          Xem Thêm
-        </button>
+          <FloralCorner position="top-left" size={50} className="opacity-80" />
+          <FloralCorner position="top-right" size={50} className="opacity-80" />
+          <FloralCorner position="bottom-left" size={50} className="opacity-80" />
+          <FloralCorner position="bottom-right" size={50} className="opacity-80" />
+
+          {/* Wax Seal Monogram */}
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-[#DFCEAA] bg-[#FAF7F0] shadow-inner">
+            <span className="font-allura text-2xl text-[#C6A66B]">
+              B &amp; L
+            </span>
+          </div>
+
+          <span className="mt-4 inline-block font-sans text-xs font-semibold uppercase tracking-[0.35em] text-[#C6A66B]">
+            Thiệp cưới trân quý
+          </span>
+
+          <h3 className="mt-2 font-serif text-3xl font-semibold text-[#59463D]">
+            Chào Mừng Bạn Đến Chung Vui
+          </h3>
+
+          <DividerFlourish className="my-2" />
+
+          <p className="font-serif text-base italic leading-relaxed text-[#59463D]">
+            “Chúng tôi rất hạnh phúc và trân trọng khi được chia sẻ khoảnh khắc thiêng liêng này cùng bạn.”
+          </p>
+
+          {name && (
+            <p className="mt-3 rounded-full bg-[#FAF7F0] py-1 px-4 font-sans text-xs font-medium text-[#C6A66B] inline-block border border-[#DFCEAA]/50">
+              Khách mời danh dự: {name}
+            </p>
+          )}
+
+          <div className="mt-7">
+            <button
+              onClick={() => {
+                setOpen(false);
+                onClose();
+              }}
+              className="inline-flex items-center justify-center rounded-full bg-[#59463D] px-8 py-3.5 font-sans text-xs font-semibold uppercase tracking-widest text-[#FFFDF9] shadow-[0_8px_20px_rgba(89,70,61,0.2)] transition-all duration-300 hover:bg-[#3D2F28] hover:scale-105"
+            >
+              Mở Thiệp Mời
+            </button>
+          </div>
+        </motion.div>
       </div>
-    </div>
+    </AnimatePresence>
   );
 }
 

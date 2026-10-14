@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import Hero from '@/components/wedding/Hero';
 import Couple from '@/components/wedding/Couple';
 import Popup from '@/components/wedding/Popup';
+import MusicPlayer from '@/components/wedding/MusicPlayer';
 
 import { useGuest } from '@/hooks/useGuest';
 
@@ -30,11 +31,11 @@ function App() {
   const closeConfirmation = useCallback(() => setConfirmationName(''), []);
 
   return (
-    <div className="min-h-screen bg-wedding-cream text-gray-800">
+    <div className="min-h-screen bg-[#FAF7F0] text-[#75665D]">
       <Popup name={confirmationName} onClose={closeConfirmation} />
       <Hero />
       <Couple guestName={guest?.name} />
-      <Suspense fallback={<div className="h-24 bg-wedding-cream" aria-hidden="true" />}>
+      <Suspense fallback={<div className="h-24 bg-[#FAF7F0]" aria-hidden="true" />}>
         <Story />
         <Gallery />
         <Countdown />
@@ -43,6 +44,7 @@ function App() {
         <Wishes refreshSignal={refreshWishesSignal} />
         <Footer />
       </Suspense>
+      <MusicPlayer />
     </div>
   );
 }

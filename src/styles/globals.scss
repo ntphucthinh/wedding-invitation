@@ -1,6 +1,17 @@
 @use 'variables' as *;
 @use 'animation';
 
+:root {
+  --color-ivory: #FAF7F0;
+  --color-warm-white: #FFFDF9;
+  --color-champagne: #C6A66B;
+  --color-soft-gold: #DFCEAA;
+  --color-deep-brown: #59463D;
+  --color-body-text: #75665D;
+  --color-sage: #A7AA93;
+  --color-subtle-border: #E8DED0;
+}
+
 // Font Faces
 @font-face {
   font-family: 'Allura';
@@ -30,62 +41,157 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: $color-cream;
-  color: $color-text-dark;
-  line-height: 1.6;
+  font-family: 'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: $color-ivory;
+  color: $color-body-text;
+  line-height: 1.7;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 // Typography
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Allura', cursive;
-  font-weight: normal;
-  color: $color-gold;
+  font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+  font-weight: 600;
+  color: $color-deep-brown;
+  letter-spacing: -0.01em;
 }
 
 .font-allura,
-.font-wedding {
+.font-wedding,
+.font-script {
   font-family: 'Allura', cursive;
+  font-weight: 400;
 }
 
 .font-utm-wedding {
   font-family: 'UTM Wedding', serif;
 }
 
-// Utilities
+.font-cormorant {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+// Luxury Wedding Utilities
 .text-gold {
-  color: $color-gold;
+  color: $color-champagne;
 }
 
-.bg-gold {
-  background-color: $color-gold;
+.text-champagne {
+  color: $color-champagne;
 }
 
-.text-cream {
-  color: $color-cream;
+.text-soft-gold {
+  color: $color-soft-gold;
 }
 
-.bg-cream {
-  background-color: $color-cream;
+.text-deep-brown {
+  color: $color-deep-brown;
 }
 
-.text-burgundy {
-  color: $color-burgundy;
+.text-body-text {
+  color: $color-body-text;
 }
 
-.bg-burgundy {
-  background-color: $color-burgundy;
+.text-sage {
+  color: $color-sage;
 }
 
-// Layout helpers
+.bg-ivory {
+  background-color: $color-ivory;
+}
+
+.bg-warm-white {
+  background-color: $color-warm-white;
+}
+
+.bg-champagne {
+  background-color: $color-champagne;
+}
+
+.bg-deep-brown {
+  background-color: $color-deep-brown;
+}
+
+.border-subtle {
+  border-color: $color-subtle-border;
+}
+
+.border-champagne {
+  border-color: $color-champagne;
+}
+
+.border-soft-gold {
+  border-color: $color-soft-gold;
+}
+
+// Elegant Paper Card Effect
+.wedding-card {
+  background-color: $color-warm-white;
+  border: 1px solid $color-subtle-border;
+  border-radius: 1.75rem;
+  box-shadow: 0 12px 32px -4px rgba(89, 70, 61, 0.06);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.wedding-card:hover {
+  box-shadow: 0 18px 40px -6px rgba(89, 70, 61, 0.1);
+}
+
+// Gold Gradient Text
+.text-gold-gradient {
+  background: linear-gradient(135deg, #C6A66B 0%, #DFCEAA 50%, #A38448 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// Subtle Gold Foil Border
+.gold-foil-border {
+  position: relative;
+}
+
+.gold-foil-border::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(198, 166, 107, 0.35);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+// Custom Scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-ivory;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #DFCEAA;
+  border-radius: 9999px;
+  border: 2px solid $color-ivory;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C6A66B;
+}
+
+// Layout helper
 .container-custom {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 @media (min-width: 768px) {

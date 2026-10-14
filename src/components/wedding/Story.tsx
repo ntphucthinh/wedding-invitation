@@ -1,53 +1,128 @@
 import { motion } from 'framer-motion';
 import storyImage from '@/assets/images/tai-xuong-1-20250809012834-bywlo.jpg';
+import { DividerFlourish, FloralCorner } from './Ornaments';
+import WeddingImage from './WeddingImage';
+import { storyAccentItem } from '@/config/weddingGallery';
 
-// const timeline = [
-//   { date: '2019', title: 'Gặp nhau', description: 'Chúng tôi bắt đầu quen nhau từ những tin nhắn vu vơ và những buổi hẹn hò giản dị.' },
-//   { date: '2021', title: 'Đồng hành', description: 'Tình cảm lớn lên từng ngày, cùng nhau chia sẻ niềm vui, nỗi buồn và những điều nhỏ bé.' },
-//   { date: '2026', title: 'Đăng ký hôn nhân', description: 'Ngày hôm nay là kết quả của một hành trình dài, đầy yêu thương và sự tin tưởng.' },
-// ];
+const milestones = [
+  {
+    year: '2019',
+    title: 'Gặp gỡ tình cờ',
+    desc: 'Bắt đầu từ những tin nhắn vu vơ và những buổi hẹn hò giản dị đầu tiên.',
+  },
+  {
+    year: '2021',
+    title: 'Đồng hành & sẻ chia',
+    desc: 'Cùng nhau vượt qua mọi thử thách, tình cảm lớn lên qua từng ngày tháng.',
+  },
+  {
+    year: '2026',
+    title: 'Ngày chung đôi',
+    desc: 'Quyết định cùng nhau viết tiếp câu chuyện tình yêu bằng một đám cưới trọn vẹn.',
+  },
+];
 
 function Story() {
   return (
-    <section className="bg-[#f7efe0] px-6 py-20 sm:px-8 lg:px-12">
-      <div className="mx-auto max-w-6xl">
-        <div className="mb-12 text-center">
-          <p className="text-sm uppercase tracking-[0.4em] text-[#9e8130]">Câu chuyện của chúng tôi</p>
-          <h2 className="mt-3 font-wedding text-4xl text-[#8b0000] sm:text-5xl">Tình yêu lớn lên từng ngày</h2>
-        </div>
+    <section id="story" className="relative overflow-hidden bg-[#FFFDF9] py-20 sm:py-24 lg:py-28">
+      <div className="relative mx-auto max-w-6xl px-6 sm:px-8">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="text-center"
+        >
+          <span className="font-sans text-xs font-semibold uppercase tracking-[0.4em] text-[#C6A66B]">
+            Câu chuyện của chúng tôi
+          </span>
+          <h2 className="mt-3 font-serif text-3xl sm:text-4xl lg:text-5xl font-medium text-[#59463D]">
+            Tình Yêu Lớn Lên Từng Ngày
+          </h2>
+          <DividerFlourish className="mt-3" />
+        </motion.div>
 
-        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <motion.img
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+        {/* 2-Column Editorial Story Grid */}
+        <div className="mt-14 sm:mt-18 grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          {/* Photos Column: Main Story Photo + Accent Placeholder Slot (Image 5) */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            src={storyImage}
-            alt="Câu chuyện tình yêu"
-            className="h-[420px] w-full rounded-[2rem] object-cover shadow-[0_20px_60px_rgba(0,0,0,0.1)]"
-          />
-
-          <div className="space-y-6">
-            <div className="rounded-[1.5rem] border border-[#e3d3a7] bg-white/80 p-6 shadow-sm">
-              <p className="text-lg leading-8 text-gray-700">
-                “Chúng tôi gặp nhau như một sự tình cờ, nhưng lại ở bên nhau như một điều đã được định sẵn. Từ những tin nhắn vu vơ, những buổi hẹn hò giản dị, tình cảm lớn lên từng ngày. Và giờ đây, chúng tôi quyết định cùng nhau viết tiếp câu chuyện ấy, bằng một đám cưới trọn vẹn yêu thương.”
-              </p>
+            transition={{ duration: 0.8 }}
+            className="relative"
+          >
+            {/* Main Story Image */}
+            <div className="relative overflow-hidden rounded-[2.5rem] border border-[#E8DED0] bg-[#FAF7F0] p-2 shadow-[0_16px_40px_-8px_rgba(89,70,61,0.12)]">
+              <img
+                src={storyImage}
+                alt="Câu chuyện tình yêu Văn Bách & Khánh Ly"
+                className="h-[380px] sm:h-[460px] w-full rounded-[2rem] object-cover"
+              />
             </div>
-            {/* {timeline.map((item, index) => (
-              <motion.div
-                key={item.date}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="rounded-[1.5rem] border border-[#e3d3a7] bg-white/80 p-6 shadow-sm"
-              >
-                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#9e8130]">{item.date}</p>
-                <h3 className="mt-2 font-wedding text-2xl text-[#8b0000]">{item.title}</h3>
-                <p className="mt-3 text-gray-600">{item.description}</p>
-              </motion.div>
-            ))} */}
-          </div>
+
+            {/* Overlapping Accent Photo Frame (Using Image 5 Placeholder) */}
+            <div className="hidden sm:block absolute -bottom-6 -right-6 w-48 sm:w-56 overflow-hidden rounded-[1.75rem] border-2 border-[#FFFDF9] bg-[#FFFDF9] p-1.5 shadow-[0_14px_35px_rgba(89,70,61,0.18)]">
+              <WeddingImage
+                src={storyAccentItem.src}
+                alt={storyAccentItem.alt}
+                placeholderLabel={storyAccentItem.placeholderLabel}
+                caption={storyAccentItem.caption}
+                aspectRatio="aspect-square"
+                className="rounded-[1.4rem]"
+              />
+            </div>
+          </motion.div>
+
+          {/* Letter / Story Narrative Column */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="space-y-6"
+          >
+            {/* Stationery Letter Box */}
+            <div className="relative rounded-[2rem] border border-[#E8DED0] bg-[#FAF7F0]/80 p-8 sm:p-10 shadow-[0_8px_24px_rgba(89,70,61,0.05)]">
+              <FloralCorner position="top-right" size={44} className="opacity-60" />
+
+              {/* Decorative quotation mark */}
+              <span className="font-serif text-6xl leading-none text-[#DFCEAA] select-none">
+                “
+              </span>
+
+              <p className="-mt-4 font-serif text-lg sm:text-xl leading-relaxed text-[#59463D] italic">
+                Chúng tôi gặp nhau như một sự tình cờ, nhưng lại ở bên nhau như một điều đã được định sẵn. Từ những tin nhắn vu vơ, những buổi hẹn hò giản dị, tình cảm lớn lên từng ngày. Và giờ đây, chúng tôi quyết định cùng nhau viết tiếp câu chuyện ấy, bằng một đám cưới trọn vẹn yêu thương.
+              </p>
+
+              <div className="mt-6 flex items-center justify-between border-t border-[#DFCEAA]/50 pt-4">
+                <span className="font-allura text-2xl sm:text-3xl text-[#C6A66B]">
+                  Văn Bách &amp; Khánh Ly
+                </span>
+                <span className="font-sans text-xs uppercase tracking-[0.25em] text-[#75665D]">
+                  Forever &amp; Always
+                </span>
+              </div>
+            </div>
+
+            {/* Milestones timeline badges */}
+            <div className="grid grid-cols-3 gap-3">
+              {milestones.map((item) => (
+                <div
+                  key={item.year}
+                  className="rounded-[1.25rem] border border-[#E8DED0] bg-[#FAF7F0]/50 p-4 text-center transition-all duration-300 hover:bg-[#FAF7F0] hover:border-[#DFCEAA]"
+                >
+                  <span className="font-serif text-base sm:text-lg font-bold text-[#C6A66B]">
+                    {item.year}
+                  </span>
+                  <p className="mt-1 font-serif text-xs sm:text-sm font-semibold text-[#59463D] line-clamp-1">
+                    {item.title}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
