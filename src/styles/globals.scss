@@ -148,6 +148,7 @@ h1, h2, h3, h4, h5, h6 {
 .text-gold-gradient {
   background: linear-gradient(135deg, #C6A66B 0%, #DFCEAA 50%, #A38448 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -199,4 +200,19 @@ h1, h2, h3, h4, h5, h6 {
     padding-left: 2rem;
     padding-right: 2rem;
   }
+}
+
+// Wedding Gallery Slideshow Styles
+.gallery-image-wrapper {
+  position: relative;
+}
+
+.gallery-navigation-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

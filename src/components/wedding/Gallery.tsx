@@ -1,11 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation, Autoplay } from 'swiper/modules';
-import { FaTimes, FaThLarge, FaFilm } from 'react-icons/fa';
+import type { Swiper as SwiperType } from 'swiper';
+import { Autoplay } from 'swiper/modules';
+import { FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
 import { DividerFlourish } from './Ornaments';
 import WeddingImage from './WeddingImage';
@@ -13,11 +12,26 @@ import { weddingGalleryItems, type WeddingPhotoItem } from '@/config/weddingGall
 
 function Gallery() {
   const [selectedPhoto, setSelectedPhoto] = useState<WeddingPhotoItem | null>(null);
-  const [viewMode, setViewMode] = useState<'mosaic' | 'slider'>('mosaic');
+  const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const currentItem = weddingGalleryItems[activeIndex] ?? weddingGalleryItems[0];
+
+  // Close lightbox modal on Escape key
+  useEffect(() => {
+    if (!selectedPhoto) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setSelectedPhoto(null);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedPhoto]);
 
   return (
-    <section id="gallery" className="relative overflow-hidden bg-[#FFFDF9] py-20 sm:py-24 lg:py-28">
-      <div className="relative mx-auto max-w-6xl px-6 sm:px-8">
+    <section id="gallery" className="relative overflow-hidden bg-[#FFFDF9] py-16 sm:py-20 lg:py-24">
+      <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -36,175 +50,126 @@ function Gallery() {
             Từng ánh mắt, nụ cười và khoảnh khắc thiêng liêng nhất trên hành trình của chúng tôi.
           </p>
           <DividerFlourish className="mt-4" />
-
-          {/* View Mode Switcher */}
-          <div className="mt-8 inline-flex items-center rounded-full border border-[#DFCEAA] bg-[#FAF7F0] p-1 shadow-sm">
-            <button
-              onClick={() => setViewMode('mosaic')}
-              className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-medium uppercase tracking-wider transition-all ${
-                viewMode === 'mosaic'
-                  ? 'bg-[#59463D] text-[#FFFDF9] shadow-sm'
-                  : 'text-[#75665D] hover:text-[#59463D]'
-              }`}
-            >
-              <FaThLarge className="text-xs" /> Tạp chí ảnh
-            </button>
-            <button
-              onClick={() => setViewMode('slider')}
-              className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-medium uppercase tracking-wider transition-all ${
-                viewMode === 'slider'
-                  ? 'bg-[#59463D] text-[#FFFDF9] shadow-sm'
-                  : 'text-[#75665D] hover:text-[#59463D]'
-              }`}
-            >
-              <FaFilm className="text-xs" /> Trình chiếu
-            </button>
-          </div>
         </motion.div>
 
-        {/* View Mode 1: Editorial Magazine Mosaic */}
-        {viewMode === 'mosaic' && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="mt-12 space-y-6"
-          >
-            {/* Top Featured Row: 1 Grand Feature (Left) + 2 Secondary (Right) */}
-            <div className="grid gap-6 md:grid-cols-12 md:items-stretch">
-              {/* Grand Feature Card */}
-              <div
-                onClick={() => setSelectedPhoto(weddingGalleryItems[0])}
-                className="group relative cursor-pointer md:col-span-7 overflow-hidden rounded-[2.2rem] border border-[#E8DED0] bg-[#FAF7F0] p-2 shadow-[0_12px_32px_-4px_rgba(89,70,61,0.08)] transition-all duration-300 hover:shadow-[0_20px_45px_-8px_rgba(89,70,61,0.14)]"
+        {/* Slideshow Presentation Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.15 }}
+          className="mx-auto mt-8 sm:mt-10 max-w-4xl"
+        >
+          <div className="group relative overflow-hidden rounded-[2rem] border border-[#E8DED0] bg-[#FAF7F0] p-2.5 sm:p-3.5 shadow-[0_12px_32px_-4px_rgba(89,70,61,0.06)] transition-all duration-300 hover:shadow-[0_18px_40px_-6px_rgba(89,70,61,0.1)]">
+            {/* 1. Image Viewport (Relative wrapper, hosts the navigation buttons centered on the image) */}
+            <div className="gallery-image-wrapper relative overflow-hidden rounded-[1.6rem] bg-[#F5EFEB]">
+              <Swiper
+                modules={[Autoplay]}
+                loop={true}
+                autoplay={{
+                  delay: 4500,
+                  disableOnInteraction: false,
+                  pauseOnMouseEnter: true,
+                }}
+                slidesPerView={1}
+                onSwiper={(swiper) => setSwiperInstance(swiper)}
+                onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+                className="h-full w-full select-none"
               >
-                <div className="relative h-full min-h-[380px] sm:min-h-[460px] overflow-hidden rounded-[1.8rem]">
-                  <WeddingImage
-                    src={weddingGalleryItems[0].src}
-                    alt={weddingGalleryItems[0].alt}
-                    placeholderLabel={weddingGalleryItems[0].placeholderLabel}
-                    aspectRatio="h-full w-full"
-                    className="h-full w-full"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#2A1E16]/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end p-6">
-                    <div className="text-white">
-                      <p className="font-serif text-xl sm:text-2xl font-semibold">
-                        {weddingGalleryItems[0].alt}
-                      </p>
-                      <p className="mt-1 text-xs text-[#DFCEAA] font-sans">
-                        {weddingGalleryItems[0].caption}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Two Stacked Cards on Right */}
-              <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-1 md:col-span-5">
-                {[weddingGalleryItems[1], weddingGalleryItems[2]].map((item) => (
-                  <div
-                    key={item.id}
-                    onClick={() => setSelectedPhoto(item)}
-                    className="group relative cursor-pointer overflow-hidden rounded-[2rem] border border-[#E8DED0] bg-[#FAF7F0] p-2 shadow-[0_10px_24px_rgba(89,70,61,0.06)] transition-all duration-300 hover:shadow-[0_16px_35px_rgba(89,70,61,0.12)]"
-                  >
-                    <div className="relative h-[220px] sm:h-[240px] overflow-hidden rounded-[1.5rem]">
+                {weddingGalleryItems.map((item) => (
+                  <SwiperSlide key={item.id}>
+                    <div
+                      onClick={() => setSelectedPhoto(item)}
+                      role="button"
+                      tabIndex={0}
+                      aria-label={`Xem ảnh lớn: ${item.alt}`}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          setSelectedPhoto(item);
+                        }
+                      }}
+                      className="group/img relative h-[340px] sm:h-[420px] md:h-[480px] lg:h-[520px] w-full cursor-pointer overflow-hidden"
+                    >
                       <WeddingImage
                         src={item.src}
                         alt={item.alt}
                         placeholderLabel={item.placeholderLabel}
                         aspectRatio="h-full w-full"
                         className="h-full w-full"
+                        imgClassName="transition-transform duration-700 ease-out group-hover/img:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#2A1E16]/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end p-4">
-                        <p className="font-serif text-sm font-medium text-white">
-                          {item.alt}
-                        </p>
-                      </div>
                     </div>
-                  </div>
+                  </SwiperSlide>
                 ))}
-              </div>
+              </Swiper>
+
+              {/* Navigation Button: Prev */}
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  swiperInstance?.slidePrev();
+                }}
+                aria-label="Ảnh trước"
+                className="gallery-navigation-button gallery-nav-prev absolute left-2.5 sm:left-4 top-1/2 -translate-y-1/2 z-10 flex h-9 w-9 sm:h-10 sm:w-10 lg:h-11 lg:w-11 items-center justify-center rounded-full border border-[#D9C49B] bg-[#FAF7F0]/90 text-[#59463D] shadow-sm backdrop-blur-sm transition-all duration-200 hover:bg-[#FAF7F0] hover:text-[#C6A264] hover:border-[#C6A264] hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#C6A264]/40"
+              >
+                <FaChevronLeft className="text-xs sm:text-sm -translate-x-[1px]" />
+              </button>
+
+              {/* Navigation Button: Next */}
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  swiperInstance?.slideNext();
+                }}
+                aria-label="Ảnh tiếp theo"
+                className="gallery-navigation-button gallery-nav-next absolute right-2.5 sm:right-4 top-1/2 -translate-y-1/2 z-10 flex h-9 w-9 sm:h-10 sm:w-10 lg:h-11 lg:w-11 items-center justify-center rounded-full border border-[#D9C49B] bg-[#FAF7F0]/90 text-[#59463D] shadow-sm backdrop-blur-sm transition-all duration-200 hover:bg-[#FAF7F0] hover:text-[#C6A264] hover:border-[#C6A264] hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#C6A264]/40"
+              >
+                <FaChevronRight className="text-xs sm:text-sm translate-x-[1px]" />
+              </button>
             </div>
 
-            {/* Bottom Row: 4 Balanced Editorial Cards (Including Placeholders Image 1, Image 2, Image 3) */}
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 pt-2">
-              {weddingGalleryItems.slice(3).map((item) => (
-                <div
-                  key={item.id}
-                  onClick={() => setSelectedPhoto(item)}
-                  className="group relative cursor-pointer overflow-hidden rounded-[1.75rem] border border-[#E8DED0] bg-[#FAF7F0] p-2 shadow-[0_8px_20px_rgba(89,70,61,0.05)] transition-all duration-300 hover:shadow-[0_14px_30px_rgba(89,70,61,0.1)] hover:border-[#DFCEAA]"
-                >
-                  <div className="relative h-[240px] sm:h-[280px] overflow-hidden rounded-[1.3rem]">
-                    <WeddingImage
-                      src={item.src}
-                      alt={item.alt}
-                      placeholderLabel={item.placeholderLabel}
-                      aspectRatio="h-full w-full"
-                      className="h-full w-full"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#2A1E16]/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end p-3">
-                      <p className="font-serif text-xs sm:text-sm font-medium text-white line-clamp-1">
-                        {item.alt}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
+            {/* 2. Caption Area (Positioned below image wrapper, height reserved to prevent layout shifts) */}
+            <div className="flex min-h-[68px] sm:min-h-[76px] flex-col justify-center px-4 pt-3.5 pb-2 text-center">
+              <p className="font-serif text-base sm:text-lg md:text-xl font-semibold text-[#59463D] transition-opacity duration-300">
+                {currentItem?.alt}
+              </p>
+              {currentItem?.caption && (
+                <p className="mt-1 font-sans text-xs sm:text-sm text-[#75665D]/85 line-clamp-2 transition-opacity duration-300">
+                  {currentItem.caption}
+                </p>
+              )}
             </div>
-          </motion.div>
-        )}
 
-        {/* View Mode 2: Swiper Slider Carousel */}
-        {viewMode === 'slider' && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="mt-12"
-          >
-            <Swiper
-              modules={[Pagination, Navigation, Autoplay]}
-              navigation
-              pagination={{ clickable: true }}
-              autoplay={{ delay: 4500, disableOnInteraction: false }}
-              slidesPerView={1}
-              spaceBetween={24}
-              breakpoints={{
-                640: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 },
-              }}
-              className="pb-14 wedding-swiper"
+            {/* 3. Indicators (Minimalist dots, Champagne gold / Warm brown, synchronized with active slide) */}
+            <div
+              role="tablist"
+              aria-label="Danh sách các ảnh trình chiếu"
+              className="flex items-center justify-center gap-2 pb-2.5 pt-1"
             >
-              {weddingGalleryItems.map((item) => (
-                <SwiperSlide key={item.id}>
-                  <div
-                    onClick={() => setSelectedPhoto(item)}
-                    className="group relative cursor-pointer overflow-hidden rounded-[2rem] border border-[#E8DED0] bg-[#FAF7F0] p-2 shadow-sm transition-all duration-300 hover:shadow-md"
-                  >
-                    <div className="relative h-[340px] overflow-hidden rounded-[1.6rem]">
-                      <WeddingImage
-                        src={item.src}
-                        alt={item.alt}
-                        placeholderLabel={item.placeholderLabel}
-                        aspectRatio="h-full w-full"
-                        className="h-full w-full"
-                      />
-                    </div>
-                    <div className="p-3 text-center">
-                      <p className="font-serif text-base font-semibold text-[#59463D] truncate">
-                        {item.alt}
-                      </p>
-                      {item.caption && (
-                        <p className="font-sans text-xs text-[#75665D]/80 truncate">
-                          {item.caption}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </motion.div>
-        )}
+              {weddingGalleryItems.map((item, idx) => {
+                const isActive = idx === activeIndex;
+                return (
+                  <button
+                    key={item.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={isActive}
+                    aria-label={`Chuyển đến ảnh ${idx + 1}: ${item.alt}`}
+                    onClick={() => swiperInstance?.slideToLoop(idx)}
+                    className={`h-2 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#C6A264]/40 ${
+                      isActive
+                        ? 'w-6 bg-[#9C7540] shadow-sm'
+                        : 'w-2 bg-[#D9C9AC] hover:bg-[#C6A264]/70'
+                    }`}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        </motion.div>
       </div>
 
       {/* Lightbox Modal */}
@@ -227,9 +192,10 @@ function Gallery() {
             >
               {/* Close Button */}
               <button
+                type="button"
                 onClick={() => setSelectedPhoto(null)}
                 aria-label="Đóng ảnh"
-                className="absolute right-5 top-5 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-[#3D2F28]/80 text-[#FFFDF9] backdrop-blur-sm transition-transform hover:scale-110"
+                className="absolute right-5 top-5 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-[#3D2F28]/80 text-[#FFFDF9] backdrop-blur-sm transition-transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-[#C6A264]"
               >
                 <FaTimes />
               </button>

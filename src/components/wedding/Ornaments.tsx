@@ -52,38 +52,39 @@ export const FloralCorner: React.FC<FloralCornerProps> = ({
     >
       <path
         d="M6 74 C6 30 30 6 74 6"
-        stroke="#C6A66B"
+        stroke="#C6A264"
         strokeWidth="1.2"
         strokeLinecap="round"
         strokeDasharray="2 2"
-        opacity="0.45"
+        opacity="0.55"
       />
       <path
         d="M10 70 C10 34 34 10 70 10"
-        stroke="#C6A66B"
+        stroke="#C6A264"
         strokeWidth="1.5"
         strokeLinecap="round"
-        opacity="0.85"
+        opacity="0.9"
       />
       {/* Botanical leaves */}
       <path
         d="M24 38 C20 30 14 30 12 34 C16 38 20 40 24 38 Z"
         fill="#A7AA93"
-        opacity="0.65"
+        opacity="0.8"
       />
       <path
         d="M38 24 C30 20 30 14 34 12 C38 16 40 20 38 24 Z"
         fill="#A7AA93"
-        opacity="0.65"
+        opacity="0.8"
       />
       <path
         d="M28 28 C22 22 18 24 16 26 C20 30 24 30 28 28 Z"
-        fill="#DFCEAA"
+        fill="#DCC79E"
+        opacity="0.9"
       />
       {/* Little flower bud */}
-      <circle cx="28" cy="28" r="2.5" fill="#C6A66B" />
-      <circle cx="15" cy="50" r="1.5" fill="#DFCEAA" />
-      <circle cx="50" cy="15" r="1.5" fill="#DFCEAA" />
+      <circle cx="28" cy="28" r="2.5" fill="#C6A264" />
+      <circle cx="15" cy="50" r="1.5" fill="#DCC79E" />
+      <circle cx="50" cy="15" r="1.5" fill="#DCC79E" />
     </svg>
   );
 };

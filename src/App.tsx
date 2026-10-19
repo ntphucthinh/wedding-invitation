@@ -8,10 +8,10 @@ import MusicPlayer from '@/components/wedding/MusicPlayer';
 
 import { useGuest } from '@/hooks/useGuest';
 
-const Story = lazy(() => import('@/components/wedding/Story'));
 const Gallery = lazy(() => import('@/components/wedding/Gallery'));
 const Countdown = lazy(() => import('@/components/wedding/Countdown'));
 const Event = lazy(() => import('@/components/wedding/Event'));
+const WeddingGift = lazy(() => import('@/components/wedding/WeddingGift'));
 const RSVP = lazy(() => import('@/components/wedding/RSVP'));
 const Wishes = lazy(() => import('@/components/wedding/Wishes'));
 const Footer = lazy(() => import('@/components/wedding/Footer'));
@@ -36,10 +36,10 @@ function App() {
       <Hero />
       <Couple guestName={guest?.name} />
       <Suspense fallback={<div className="h-24 bg-[#FAF7F0]" aria-hidden="true" />}>
-        <Story />
         <Gallery />
         <Countdown />
         <Event />
+        <WeddingGift />
         <RSVP onSubmitted={handleRsvpSubmitted} />
         <Wishes refreshSignal={refreshWishesSignal} />
         <Footer />
