@@ -1,79 +1,35 @@
-import galleryOne from '@/assets/images/betterimage_1754671494992-20250809012834-m-edg.jpeg';
-import galleryTwo from '@/assets/images/betterimage_1754671511212-20250809012834-ygz08.jpeg';
-import galleryThree from '@/assets/images/snapedit_1754670036384-20250809012838-xbxki.jpeg';
-import galleryFour from '@/assets/images/z6888117023198_c24fe7d0cb4f28c899222a499b237729-20250809012834-9fkoy.jpg';
+import { galleryPhotoConfigs, type WeddingPhotoSlot } from './weddingPhotos';
 
-export interface WeddingPhotoItem {
-  id: string;
-  src: string | null;
-  placeholderLabel?: string;
-  alt: string;
-  caption?: string;
-  ratio?: 'portrait' | 'landscape' | 'square';
-}
+/**
+ * =========================================================================
+ * HƯỚNG DẪN TỈ LỆ ẢNH CƯỚI ĐẸP NHẤT (OPTIMAL WEDDING PHOTO ASPECT RATIO GUIDE)
+ * =========================================================================
+ * 1. TỈ LỆ ĐẸP NHẤT CHO ALBUM KHOẢNH KHẮC:
+ *    - Ảnh dọc 2:3 (Khuyên dùng chuẩn nhất cho toàn bộ album):
+ *      + Kích thước tối ưu: 1200 x 1800 px (hoặc 1000 x 1500 px, 1066 x 1600 px).
+ *      + Tỉ lệ 2:3 là tỉ lệ chụp ảnh cưới studio tiêu chuẩn tại Việt Nam và quốc tế.
+ *      + Hiển thị trọn vẹn toàn thân, váy cưới và khuôn mặt rạng rỡ của dâu rể
+ *        mà không bị crop hay thừa viền trên cả Mobile và PC.
+ *    - Ảnh dọc 3:4 (Chuẩn chân dung nghệ thuật):
+ *      + Kích thước tối ưu: 1200 x 1600 px (hoặc 900 x 1200 px).
+ *
+ * 2. ẢNH NGANG (LANDSCAPE - NẾU CÓ):
+ *    - Tỉ lệ 3:2 (1800 x 1200 px) hoặc 16:9 (1920 x 1080 px).
+ *
+ * 3. LƯU Ý VỀ ĐỒNG BỘ:
+ *    - Nên chuẩn bị toàn bộ ảnh trong album theo cùng 1 tỉ lệ 2:3 để slideshow
+ *      chuyển cảnh mượt mà, đồng đều và mang lại trải nghiệm thị giác cao cấp nhất.
+ * =========================================================================
+ */
+
+export type WeddingPhotoItem = WeddingPhotoSlot;
 
 /**
  * Centralized Wedding Gallery & Image configuration.
- * When real photos are available for placeholders, simply assign `src` to the imported image asset or URL.
+ * All items default to elegant placeholders (Image 4, Image 5, Image 6, Image 7)
+ * while awaiting official wedding photos.
  */
-export const weddingGalleryItems: WeddingPhotoItem[] = [
-  {
-    id: 'gallery-1',
-    src: galleryOne,
-    placeholderLabel: 'Image 1',
-    alt: 'Khoảnh khắc cô dâu chú rể trao nụ cười',
-    caption: 'Tình yêu khởi đầu từ những điều bình dị nhất',
-    ratio: 'portrait',
-  },
-  {
-    id: 'gallery-2',
-    src: galleryTwo,
-    placeholderLabel: 'Image 2',
-    alt: 'Ảnh cưới nắm tay hạnh phúc',
-    caption: 'Cùng nhau bước đi trên con đường tương lai',
-    ratio: 'portrait',
-  },
-  {
-    id: 'gallery-3',
-    src: galleryThree,
-    placeholderLabel: 'Image 3',
-    alt: 'Khoảnh khắc lãng mạn của cặp đôi',
-    caption: 'Mỗi ánh nhìn đều chan chứa yêu thương',
-    ratio: 'portrait',
-  },
-  {
-    id: 'gallery-4',
-    src: galleryFour,
-    placeholderLabel: 'Image 4',
-    alt: 'Khoảnh khắc ngọt ngào bên nhau',
-    caption: 'Hạnh phúc trọn vẹn trong từng giây phút',
-    ratio: 'portrait',
-  },
-  {
-    id: 'gallery-placeholder-1',
-    src: null,
-    placeholderLabel: 'Image 1',
-    alt: 'Ảnh cưới nghệ thuật mới — Image 1',
-    caption: 'Khoảnh khắc trao nhẫn thiêng liêng',
-    ratio: 'portrait',
-  },
-  {
-    id: 'gallery-placeholder-2',
-    src: null,
-    placeholderLabel: 'Image 2',
-    alt: 'Ảnh cưới phong cách editorial — Image 2',
-    caption: 'Ánh mắt hạnh phúc trao nhau',
-    ratio: 'portrait',
-  },
-  {
-    id: 'gallery-placeholder-3',
-    src: null,
-    placeholderLabel: 'Image 3',
-    alt: 'Ảnh cưới ngoài trời lãng mạn — Image 3',
-    caption: 'Dưới ánh hoàng hôn rạng ngời',
-    ratio: 'portrait',
-  },
-];
+export const weddingGalleryItems: WeddingPhotoItem[] = galleryPhotoConfigs;
 
 export const venuePhotoItem: WeddingPhotoItem = {
   id: 'venue-image',

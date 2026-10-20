@@ -83,7 +83,7 @@ function RSVP({ onSubmitted }: RSVPProps) {
           {/* Header */}
           <div className="text-center">
             <span className="font-sans text-xs font-semibold uppercase tracking-[0.4em] text-[#C6A66B]">
-              Xác nhận tham dự &amp; Lời chúc
+              LỜI NHẮN YÊU THƯƠNG
             </span>
             <h2 className="mt-3 font-serif text-3xl sm:text-4xl lg:text-5xl font-medium text-[#59463D]">
               Gửi Lời Chúc Phúc

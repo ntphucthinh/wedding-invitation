@@ -9,6 +9,7 @@ interface WeddingImageProps {
   imgClassName?: string;
   aspectRatio?: string;
   onClick?: () => void;
+  objectFit?: 'cover' | 'contain';
 }
 
 export const WeddingImage: React.FC<WeddingImageProps> = ({
@@ -18,8 +19,9 @@ export const WeddingImage: React.FC<WeddingImageProps> = ({
   caption,
   className = '',
   imgClassName = '',
-  aspectRatio = 'aspect-[4/5]',
+  aspectRatio = 'aspect-[2/3]',
   onClick,
+  objectFit = 'contain',
 }) => {
   if (src) {
     return (
@@ -31,7 +33,7 @@ export const WeddingImage: React.FC<WeddingImageProps> = ({
           src={src}
           alt={alt}
           loading="lazy"
-          className={`h-full w-full object-cover transition-transform duration-700 hover:scale-105 ${imgClassName}`}
+          className={`h-full w-full object-${objectFit} transition-transform duration-700 ${imgClassName}`}
         />
         {caption && (
           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#3D2F28]/80 via-[#3D2F28]/40 to-transparent p-3 text-center text-xs text-[#FFFDF9] opacity-0 transition-opacity duration-300 hover:opacity-100">

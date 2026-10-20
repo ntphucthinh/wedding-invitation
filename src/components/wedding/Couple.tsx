@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import brideImage from '@/assets/images/snapedit_1754669957636-20250809012839-8oehf.jpeg';
-import groomImage from '@/assets/images/z6888086390153_6ad418f0bd3ef4e64e5141b55a7f606c-20250809012838-3nxjw.jpg';
+import { groomPhotoConfig, bridePhotoConfig } from '@/config/weddingPhotos';
+import WeddingImage from './WeddingImage';
 import { DividerFlourish, FloralCorner } from './Ornaments';
 
 type CoupleProps = {
@@ -57,14 +57,34 @@ function Couple({ guestName = 'Quý khách' }: CoupleProps) {
           >
             <FloralCorner position="top-left" size={48} className="opacity-70" />
 
+            {/*
+              ===================================================================
+              ẢNH CHÂN DUNG CHÚ RỂ (GROOM PHOTO - Image 2):
+              - Tỉ lệ chuẩn đẹp nhất: Dọc 2:3 hoặc 3:4
+              - Kích thước tối ưu: 900 x 1350 px (2:3) hoặc 900 x 1200 px (3:4)
+              - Bố cục: Chân dung bán thân từ ngực trở lên, gương mặt ở nửa trên
+              - Cấu hình nguồn ảnh tại: src/config/weddingPhotos.ts (groomPhotoConfig)
+              ===================================================================
+            */}
             {/* Arch Photo Frame */}
             <div className="relative mx-auto overflow-hidden rounded-t-[7rem] rounded-b-[1.5rem] border-2 border-[#DFCEAA] p-1.5 bg-[#FAF7F0]">
               <div className="overflow-hidden rounded-t-[6.5rem] rounded-b-[1.2rem] h-[340px] sm:h-[380px]">
-                <img
-                  src={groomImage}
-                  alt="Chú rể Văn Bách"
-                  className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                />
+                {groomPhotoConfig.src ? (
+                  <img
+                    src={groomPhotoConfig.src}
+                    alt={groomPhotoConfig.alt}
+                    className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  />
+                ) : (
+                  <WeddingImage
+                    src={null}
+                    alt={groomPhotoConfig.alt}
+                    placeholderLabel={groomPhotoConfig.placeholderLabel}
+                    caption="Vị trí ảnh chú rể"
+                    aspectRatio=""
+                    className="h-full w-full rounded-t-[6.5rem] rounded-b-[1.2rem]"
+                  />
+                )}
               </div>
             </div>
 
@@ -110,14 +130,34 @@ function Couple({ guestName = 'Quý khách' }: CoupleProps) {
           >
             <FloralCorner position="top-right" size={48} className="opacity-70" />
 
+            {/*
+              ===================================================================
+              ẢNH CHÂN DUNG CÔ DÂU (BRIDE PHOTO - Image 3):
+              - Tỉ lệ chuẩn đẹp nhất: Dọc 2:3 hoặc 3:4
+              - Kích thước tối ưu: 900 x 1350 px (2:3) hoặc 900 x 1200 px (3:4)
+              - Bố cục: Chân dung bán thân từ ngực trở lên, gương mặt ở nửa trên
+              - Cấu hình nguồn ảnh tại: src/config/weddingPhotos.ts (bridePhotoConfig)
+              ===================================================================
+            */}
             {/* Arch Photo Frame */}
             <div className="relative mx-auto overflow-hidden rounded-t-[7rem] rounded-b-[1.5rem] border-2 border-[#DFCEAA] p-1.5 bg-[#FAF7F0]">
               <div className="overflow-hidden rounded-t-[6.5rem] rounded-b-[1.2rem] h-[340px] sm:h-[380px]">
-                <img
-                  src={brideImage}
-                  alt="Cô dâu Khánh Ly"
-                  className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                />
+                {bridePhotoConfig.src ? (
+                  <img
+                    src={bridePhotoConfig.src}
+                    alt={bridePhotoConfig.alt}
+                    className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  />
+                ) : (
+                  <WeddingImage
+                    src={null}
+                    alt={bridePhotoConfig.alt}
+                    placeholderLabel={bridePhotoConfig.placeholderLabel}
+                    caption="Vị trí ảnh cô dâu"
+                    aspectRatio=""
+                    className="h-full w-full rounded-t-[6.5rem] rounded-b-[1.2rem]"
+                  />
+                )}
               </div>
             </div>
 
