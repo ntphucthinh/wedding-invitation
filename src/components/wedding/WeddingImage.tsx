@@ -36,7 +36,7 @@ export const WeddingImage: React.FC<WeddingImageProps> = ({
           className={`h-full w-full object-${objectFit} transition-transform duration-700 ${imgClassName}`}
         />
         {caption && (
-          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#3D2F28]/80 via-[#3D2F28]/40 to-transparent p-3 text-center text-xs text-[#FFFDF9] opacity-0 transition-opacity duration-300 hover:opacity-100">
+          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#3E2F26]/80 via-[#3E2F26]/40 to-transparent p-3 text-center text-xs text-[#FFFBF5] opacity-0 transition-opacity duration-300 hover:opacity-100">
             {caption}
           </div>
         )}
@@ -48,17 +48,17 @@ export const WeddingImage: React.FC<WeddingImageProps> = ({
   return (
     <div
       onClick={onClick}
-      className={`relative flex flex-col items-center justify-center overflow-hidden border border-[#DFCEAA] bg-gradient-to-br from-[#FFFDF9] via-[#FAF7F0] to-[#F4ECE1] p-4 text-center select-none ${aspectRatio} ${className} ${
-        onClick ? 'cursor-pointer hover:border-[#C6A66B]' : ''
+      className={`relative flex flex-col items-center justify-center overflow-hidden border border-[#E0D3C1] bg-gradient-to-br from-[#FDFAF5] via-[#FCF8F2] to-[#F3EBE1] p-4 text-center select-none ${aspectRatio} ${className} ${
+        onClick ? 'cursor-pointer hover:border-[#B79265]' : ''
       }`}
       aria-label={alt}
     >
       {/* Decorative inner frame */}
-      <div className="pointer-events-none absolute inset-2.5 rounded-[1rem] border border-dashed border-[#DFCEAA]/60" />
+      <div className="pointer-events-none absolute inset-2.5 rounded-[1rem] border border-dashed border-[#E0D3C1]/60" />
 
       {/* Decorative corner leaves */}
       <svg
-        className="pointer-events-none absolute left-3 top-3 h-5 w-5 text-[#C6A66B]/50"
+        className="pointer-events-none absolute left-3 top-3 h-5 w-5 text-[#B79265]/50"
         viewBox="0 0 24 24"
         fill="currentColor"
         aria-hidden="true"
@@ -67,7 +67,7 @@ export const WeddingImage: React.FC<WeddingImageProps> = ({
         <path d="M4 4C8 4 10 6 10 10C6 10 4 8 4 4Z" />
       </svg>
       <svg
-        className="pointer-events-none absolute right-3 bottom-3 h-5 w-5 text-[#C6A66B]/50 rotate-180"
+        className="pointer-events-none absolute right-3 bottom-3 h-5 w-5 text-[#B79265]/50 rotate-180"
         viewBox="0 0 24 24"
         fill="currentColor"
         aria-hidden="true"
@@ -76,13 +76,13 @@ export const WeddingImage: React.FC<WeddingImageProps> = ({
       </svg>
 
       {/* Botanical Camera / Editorial Icon */}
-      <div className="relative mb-3 flex h-14 w-14 items-center justify-center rounded-full border border-[#DFCEAA] bg-[#FFFDF9] shadow-[0_4px_12px_rgba(198,166,107,0.15)]">
+      <div className="relative mb-3 flex h-14 w-14 items-center justify-center rounded-full border border-[#E0D3C1] bg-[#FDFAF5] shadow-[0_4px_12px_rgba(183,146,101,0.15)]">
         <svg
           width="26"
           height="26"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#C6A66B"
+          stroke="#B79265"
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -93,16 +93,16 @@ export const WeddingImage: React.FC<WeddingImageProps> = ({
       </div>
 
       {/* Label: Image 1, Image 2, Image 3... */}
-      <p className="font-serif text-lg font-semibold tracking-[0.2em] text-[#59463D] sm:text-xl">
+      <p className="font-serif text-lg font-semibold tracking-[0.2em] text-[#523F34] sm:text-xl">
         {placeholderLabel}
       </p>
 
-      <span className="mt-1 inline-block rounded-full bg-[#DFCEAA]/30 px-3 py-0.5 font-sans text-[0.65rem] uppercase tracking-[0.25em] text-[#75665D]">
+      <span className="mt-1 inline-block rounded-full bg-[#DBC4A2]/30 px-3 py-0.5 font-sans text-[0.65rem] uppercase tracking-[0.25em] text-[#796152]">
         Vị trí ảnh cưới
       </span>
 
       {caption && (
-        <p className="mt-2 line-clamp-2 max-w-[85%] font-sans text-xs italic text-[#75665D]/80">
+        <p className="mt-2 line-clamp-2 max-w-[85%] font-sans text-xs italic text-[#968070]">
           {caption}
         </p>
       )}

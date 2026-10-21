@@ -40,7 +40,7 @@ export const MusicPlayer: React.FC = () => {
               initial={{ opacity: 0, x: 10 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 10 }}
-              className="hidden rounded-full border border-[#D5BC91] bg-[#F9F4EA]/95 px-3.5 py-1.5 text-xs font-medium text-[#654B36] shadow-[0_4px_16px_rgba(101,75,54,0.1)] backdrop-blur-sm sm:block"
+              className="hidden rounded-full border border-[#E0D3C1] bg-[#FCF8F2]/95 px-3.5 py-1.5 text-xs font-medium text-[#523F34] shadow-[0_4px_16px_rgba(82,63,52,0.08)] backdrop-blur-sm sm:block"
             >
               {isPlaying ? 'Tắt nhạc nền' : 'Bật nhạc cưới lãng mạn'}
             </motion.div>
@@ -52,23 +52,23 @@ export const MusicPlayer: React.FC = () => {
           whileTap={{ scale: 0.94 }}
           onClick={toggleMusic}
           aria-label={isPlaying ? 'Dừng nhạc' : 'Phát nhạc'}
-          className={`relative flex h-12 w-12 items-center justify-center rounded-full border border-[#D5BC91] shadow-[0_4px_18px_rgba(101,75,54,0.1)] backdrop-blur-md transition-all duration-300 ${
+          className={`relative flex h-12 w-12 items-center justify-center rounded-full border border-[#DBC4A2] shadow-[0_4px_18px_rgba(82,63,52,0.08)] backdrop-blur-md transition-all duration-300 ${
             isPlaying
-              ? 'bg-[#F9F4EA] text-[#C6A264] ring-2 ring-[#C6A264]/25'
-              : 'bg-[#F9F4EA]/95 text-[#C6A264] hover:bg-[#F7F0E5]'
+              ? 'bg-[#FCF8F2] text-[#B79265] ring-2 ring-[#B79265]/25'
+              : 'bg-[#FCF8F2]/95 text-[#B79265] hover:bg-[#F3EBE1]'
           }`}
         >
           {isPlaying && (
-            <span className="absolute -inset-1 animate-ping rounded-full border border-[#C6A264]/40" />
+            <span className="absolute -inset-1 animate-ping rounded-full border border-[#B79265]/40" />
           )}
           {isPlaying ? (
-            <FaPause className="text-sm text-[#C6A264]" />
+            <FaPause className="text-sm text-[#B79265]" />
           ) : (
             <motion.div
               animate={{ rotate: [0, 10, -10, 0] }}
               transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
             >
-              <FaMusic className="text-sm text-[#C6A264]" />
+              <FaMusic className="text-sm text-[#B79265]" />
             </motion.div>
           )}
         </motion.button>

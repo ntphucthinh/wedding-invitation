@@ -52,7 +52,7 @@ export const FloralCorner: React.FC<FloralCornerProps> = ({
     >
       <path
         d="M6 74 C6 30 30 6 74 6"
-        stroke="#C6A264"
+        stroke="#B79265"
         strokeWidth="1.2"
         strokeLinecap="round"
         strokeDasharray="2 2"
@@ -60,7 +60,7 @@ export const FloralCorner: React.FC<FloralCornerProps> = ({
       />
       <path
         d="M10 70 C10 34 34 10 70 10"
-        stroke="#C6A264"
+        stroke="#B79265"
         strokeWidth="1.5"
         strokeLinecap="round"
         opacity="0.9"
@@ -68,30 +68,30 @@ export const FloralCorner: React.FC<FloralCornerProps> = ({
       {/* Botanical leaves */}
       <path
         d="M24 38 C20 30 14 30 12 34 C16 38 20 40 24 38 Z"
-        fill="#A7AA93"
+        fill="#9EAA8A"
         opacity="0.8"
       />
       <path
         d="M38 24 C30 20 30 14 34 12 C38 16 40 20 38 24 Z"
-        fill="#A7AA93"
+        fill="#9EAA8A"
         opacity="0.8"
       />
       <path
         d="M28 28 C22 22 18 24 16 26 C20 30 24 30 28 28 Z"
-        fill="#DCC79E"
+        fill="#DBC4A2"
         opacity="0.9"
       />
       {/* Little flower bud */}
-      <circle cx="28" cy="28" r="2.5" fill="#C6A264" />
-      <circle cx="15" cy="50" r="1.5" fill="#DCC79E" />
-      <circle cx="50" cy="15" r="1.5" fill="#DCC79E" />
+      <circle cx="28" cy="28" r="2.5" fill="#B79265" />
+      <circle cx="15" cy="50" r="1.5" fill="#DBC4A2" />
+      <circle cx="50" cy="15" r="1.5" fill="#DBC4A2" />
     </svg>
   );
 };
 
 export const DividerFlourish: React.FC<{ className?: string; color?: string }> = ({
   className = '',
-  color = '#C6A66B',
+  color = '#B79265',
 }) => {
   return (
     <div className={`flex items-center justify-center gap-3 py-2 ${className}`}>
@@ -102,7 +102,7 @@ export const DividerFlourish: React.FC<{ className?: string; color?: string }> =
           fill={color}
           opacity="0.85"
         />
-        <circle cx="12" cy="12" r="1.5" fill="#FFFDF9" />
+        <circle cx="12" cy="12" r="1.5" fill="#FFFBF5" />
       </svg>
       <span className="h-px w-12 sm:w-20" style={{ background: `linear-gradient(90deg, ${color}, transparent)` }} />
     </div>
@@ -122,14 +122,14 @@ export const MonogramBadge: React.FC<{ initials?: string; subtitle?: string; cla
   }[size];
 
   return (
-    <div className={`relative flex flex-col items-center justify-center rounded-full border border-[#DFCEAA]/70 bg-[#FFFDF9]/90 shadow-[0_8px_24px_rgba(198,166,107,0.15)] backdrop-blur-sm ${sizeClasses} ${className}`}>
+    <div className={`relative flex flex-col items-center justify-center rounded-full border border-[#E0D3C1] bg-[#FCF8F2]/90 shadow-[0_8px_24px_rgba(82,63,52,0.08)] backdrop-blur-sm ${sizeClasses} ${className}`}>
       {/* Inner ornamental ring */}
-      <div className="absolute inset-1.5 rounded-full border border-dashed border-[#C6A66B]/50" />
-      <span className="font-allura text-[#C6A66B] font-normal leading-none tracking-wide text-2xl sm:text-3xl">
+      <div className="absolute inset-1.5 rounded-full border border-dashed border-[#B79265]/50" />
+      <span className="font-allura text-[#B79265] font-normal leading-none tracking-wide text-2xl sm:text-3xl">
         {initials}
       </span>
       {subtitle && (
-        <span className="mt-1 font-sans text-[0.6rem] uppercase tracking-[0.25em] text-[#75665D]/80">
+        <span className="mt-1 font-sans text-[0.6rem] uppercase tracking-[0.25em] text-[#968070]">
           {subtitle}
         </span>
       )}
@@ -149,28 +149,28 @@ export const BotanicalBranch: React.FC<{ className?: string }> = ({ className = 
     >
       <path
         d="M2 9C12 9 32 9 42 9"
-        stroke="#C6A66B"
+        stroke="#B79265"
         strokeWidth="1"
         strokeLinecap="round"
       />
       <path
         d="M10 9C9 5 5 4 4 6C5 8 8 9 10 9Z"
-        fill="#A7AA93"
+        fill="#9EAA8A"
         opacity="0.8"
       />
       <path
         d="M18 9C19 13 23 14 24 12C23 10 20 9 18 9Z"
-        fill="#A7AA93"
+        fill="#9EAA8A"
         opacity="0.8"
       />
       <path
         d="M28 9C27 5 23 4 22 6C23 8 26 9 28 9Z"
-        fill="#C6A66B"
+        fill="#B79265"
         opacity="0.8"
       />
       <path
         d="M36 9C37 13 41 14 42 12C41 10 38 9 36 9Z"
-        fill="#DFCEAA"
+        fill="#DBC4A2"
       />
     </svg>
   );

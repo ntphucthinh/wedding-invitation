@@ -2,14 +2,25 @@
 @use 'animation';
 
 :root {
-  --color-ivory: #FAF7F0;
-  --color-warm-white: #FFFDF9;
-  --color-champagne: #C6A66B;
-  --color-soft-gold: #DFCEAA;
-  --color-deep-brown: #59463D;
-  --color-body-text: #75665D;
-  --color-sage: #A7AA93;
-  --color-subtle-border: #E8DED0;
+  --color-bg-main: #F8F3EA;
+  --color-bg-secondary: #F3EBE1;
+  --color-bg-card: #FCF8F2;
+  --color-primary-text: #523F34;
+  --color-secondary-text: #796152;
+  --color-muted-text: #968070;
+  --color-antique-gold: #B79265;
+  --color-soft-gold: #DBC4A2;
+  --color-border: #E0D3C1;
+  --color-dark-button: #6C4E3A;
+  --color-dark-button-text: #FFFBF5;
+  --color-warm-white: #FDFAF5;
+
+  --color-ivory: #F8F3EA;
+  --color-champagne: #B79265;
+  --color-deep-brown: #523F34;
+  --color-body-text: #796152;
+  --color-sage: #9EAA8A;
+  --color-subtle-border: #E0D3C1;
 }
 
 // Font Faces
@@ -42,8 +53,8 @@ html {
 
 body {
   font-family: 'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: $color-ivory;
-  color: $color-body-text;
+  background-color: $color-bg-main;
+  color: $color-secondary-text;
   line-height: 1.7;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -54,7 +65,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Cormorant Garamond', 'Playfair Display', serif;
   font-weight: 600;
-  color: $color-deep-brown;
+  color: $color-primary-text;
   letter-spacing: -0.01em;
 }
 
@@ -79,11 +90,15 @@ h1, h2, h3, h4, h5, h6 {
 
 // Luxury Wedding Utilities
 .text-gold {
-  color: $color-champagne;
+  color: $color-antique-gold;
 }
 
 .text-champagne {
-  color: $color-champagne;
+  color: $color-antique-gold;
+}
+
+.text-antique-gold {
+  color: $color-antique-gold;
 }
 
 .text-soft-gold {
@@ -91,19 +106,39 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .text-deep-brown {
-  color: $color-deep-brown;
+  color: $color-primary-text;
+}
+
+.text-mocha {
+  color: $color-secondary-text;
 }
 
 .text-body-text {
-  color: $color-body-text;
+  color: $color-secondary-text;
+}
+
+.text-muted {
+  color: $color-muted-text;
 }
 
 .text-sage {
   color: $color-sage;
 }
 
+.bg-main {
+  background-color: $color-bg-main;
+}
+
+.bg-secondary {
+  background-color: $color-bg-secondary;
+}
+
+.bg-card {
+  background-color: $color-bg-card;
+}
+
 .bg-ivory {
-  background-color: $color-ivory;
+  background-color: $color-bg-main;
 }
 
 .bg-warm-white {
@@ -111,19 +146,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-champagne {
-  background-color: $color-champagne;
+  background-color: $color-antique-gold;
 }
 
 .bg-deep-brown {
-  background-color: $color-deep-brown;
+  background-color: $color-primary-text;
+}
+
+.bg-mocha-btn {
+  background-color: $color-dark-button;
+  color: $color-dark-button-text;
 }
 
 .border-subtle {
-  border-color: $color-subtle-border;
+  border-color: $color-border;
 }
 
 .border-champagne {
-  border-color: $color-champagne;
+  border-color: $color-antique-gold;
 }
 
 .border-soft-gold {
@@ -132,21 +172,21 @@ h1, h2, h3, h4, h5, h6 {
 
 // Elegant Paper Card Effect
 .wedding-card {
-  background-color: $color-warm-white;
-  border: 1px solid $color-subtle-border;
+  background-color: $color-bg-card;
+  border: 1px solid $color-border;
   border-radius: 1.75rem;
-  box-shadow: 0 12px 32px -4px rgba(89, 70, 61, 0.06);
+  box-shadow: 0 12px 32px -4px rgba(73, 54, 43, 0.08);
   position: relative;
   transition: all 0.3s ease;
 }
 
 .wedding-card:hover {
-  box-shadow: 0 18px 40px -6px rgba(89, 70, 61, 0.1);
+  box-shadow: 0 18px 40px -6px rgba(73, 54, 43, 0.12);
 }
 
 // Gold Gradient Text
 .text-gold-gradient {
-  background: linear-gradient(135deg, #C6A66B 0%, #DFCEAA 50%, #A38448 100%);
+  background: linear-gradient(135deg, #B79265 0%, #DBC4A2 50%, #99754B 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -161,7 +201,7 @@ h1, h2, h3, h4, h5, h6 {
   content: '';
   position: absolute;
   inset: 4px;
-  border: 1px solid rgba(198, 166, 107, 0.35);
+  border: 1px solid rgba(183, 146, 101, 0.35);
   border-radius: inherit;
   pointer-events: none;
 }
@@ -172,17 +212,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-track {
-  background: $color-ivory;
+  background: $color-bg-main;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #DFCEAA;
+  background: #DBC4A2;
   border-radius: 9999px;
-  border: 2px solid $color-ivory;
+  border: 2px solid $color-bg-main;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #C6A66B;
+  background: #B79265;
 }
 
 // Layout helper

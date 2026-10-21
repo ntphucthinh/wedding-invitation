@@ -1,22 +1,34 @@
-// Elegant Luxury + Romantic Floral Theme Palette
-$color-ivory: #FAF7F0;
-$color-warm-white: #FFFDF9;
-$color-champagne: #C6A66B;
-$color-soft-gold: #DFCEAA;
-$color-deep-brown: #59463D;
-$color-body-text: #75665D;
-$color-sage: #A7AA93;
-$color-subtle-border: #E8DED0;
+// Vintage Champagne & Warm Mocha Palette (Toned Down & Elegant)
+$color-bg-main: #F8F3EA;
+$color-bg-secondary: #F3EBE1;
+$color-bg-card: #FCF8F2;
+$color-primary-text: #523F34;
+$color-secondary-text: #796152;
+$color-muted-text: #968070;
+$color-antique-gold: #B79265;
+$color-soft-gold: #DBC4A2;
+$color-border: #E0D3C1;
+$color-dark-button: #6C4E3A;
+$color-dark-button-text: #FFFBF5;
+$color-warm-white: #FDFAF5;
+
+// Thematic & Semantic Aliases mapped to new tokens
+$color-ivory: #F8F3EA;
+$color-champagne: #B79265;
+$color-deep-brown: #523F34;
+$color-body-text: #796152;
+$color-subtle-border: #E0D3C1;
+$color-sage: #9EAA8A;
 
 // Legacy and helper aliases
-$color-gold: #C6A66B;
-$color-gold-light: #DFCEAA;
-$color-gold-dark: #A38448;
-$color-cream: #FAF7F0;
-$color-cream-light: #FFFDF9;
-$color-burgundy: #8B0000;
-$color-text-dark: #59463D;
-$color-text-light: #75665D;
+$color-gold: #B79265;
+$color-gold-light: #DBC4A2;
+$color-gold-dark: #99754B;
+$color-cream: #F8F3EA;
+$color-cream-light: #FCF8F2;
+$color-burgundy: #7A2828;
+$color-text-dark: #523F34;
+$color-text-light: #796152;
 $color-white: #FFFFFF;
 $color-black: #000000;
 

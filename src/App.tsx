@@ -31,11 +31,11 @@ function App() {
   const closeConfirmation = useCallback(() => setConfirmationName(''), []);
 
   return (
-    <div className="min-h-screen bg-[#FAF7F0] text-[#75665D]">
+    <div className="min-h-screen bg-[#F8F3EA] text-[#796152]">
       <Popup name={confirmationName} onClose={closeConfirmation} />
       <Hero />
       <Couple guestName={guest?.name} />
-      <Suspense fallback={<div className="h-24 bg-[#FAF7F0]" aria-hidden="true" />}>
+      <Suspense fallback={<div className="h-24 bg-[#F8F3EA]" aria-hidden="true" />}>
         <Gallery />
         <Countdown />
         <Event />
